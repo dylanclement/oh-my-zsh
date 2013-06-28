@@ -24,3 +24,4 @@ alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
 
+alias clear='echo -e \\033c' # clear and reset the terminal, get rid of scrollback
