@@ -25,3 +25,5 @@ alias sl=ls # often screw this up
 alias afind='ack-grep -il'
 
 alias clear='echo -e \\033c' # clear and reset the terminal, get rid of scrollback
+alias gpom='git pull origin master' # updates the current branch with master
+alias gpod='git pull origin develop'
