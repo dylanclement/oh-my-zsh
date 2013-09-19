@@ -74,6 +74,8 @@ alias gclean='git reset --hard && git clean -dfx'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gf='git ls-files | grep'
 alias gpoat='git push origin --all && git push origin --tags'
+alias gpom='git pull origin master'
+alias gprom='git pull --rebase origin master'
 alias gmt='git mergetool --no-prompt'
 compdef _git gm=git-mergetool
 
