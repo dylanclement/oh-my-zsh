@@ -27,6 +27,6 @@ alias afind='ack-grep -il'
 alias clear='echo -e \\033c' # clear and reset the terminal, get rid of scrollback
 
 # Added by Dylan for adslot
-alias refresh-prod="ssh -i ~/.ssh/node-abcd.pem node@direct.adslot.com 'cd /home/node/direct-web/data; tar cz *' | tar xzv -C ~/Projects/direct-web/data"
-alias refresh-dev2="ssh -i ~/.ssh/node-abcd.pem node@ice.adslot.com 'cd /home/node/direct-web-dev2/data; tar cz *' | tar xzv -C ~/Projects/direct-web/data"
-alias refresh-demo="ssh -i ~/.ssh/node-abcd.pem node@abcd-demo.adslot.com 'cd /home/node/direct-web/data; tar cz *' | tar xzv -C ~/Projects/direct-web/data"
+alias refresh-prod="ssh -i ~/.ssh/node-abcd.pem node@direct.adslot.com 'cd /home/node/direct-web/data; tar cz --exclude=adslot*target *' | tar xzv -C ~/Projects/direct-web/data"
+alias refresh-dev2="ssh -i ~/.ssh/node-abcd.pem node@ice.adslot.com 'cd /home/node/direct-web-dev2/data; tar cz --exclude=adslot*target *' | tar xzv -C ~/Projects/direct-web/data"
+alias refresh-demo="ssh -i ~/.ssh/node-abcd.pem node@abcd-demo.adslot.com 'cd /home/node/direct-web/data; tar cz --exclude=adslot*target *' | tar xzv -C ~/Projects/direct-web/data"

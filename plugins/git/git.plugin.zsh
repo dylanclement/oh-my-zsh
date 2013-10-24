@@ -81,7 +81,13 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 alias gpoat='git push origin --all && git push origin --tags'
 alias gpom='git pull origin master'
+compdef gpom=git
 alias gprom='git pull --rebase origin master'
+compdef gprom=git
+alias gpod='git pull origin develop'
+compdef gpod=git
+alias gprod='git pull --rebase origin develop'
+compdef gprod=git
 alias gmt='git mergetool --no-prompt'
 compdef _git gm=git-mergetool
 
