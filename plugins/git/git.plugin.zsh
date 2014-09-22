@@ -148,12 +148,14 @@ function current_repository() {
 # these aliases take advantage of the previous function
 alias ggpull='git pull origin $(current_branch)'
 compdef ggpull=git
+alias gupull='git pull upstream $(current_branch)'
+compdef gupull=git
 alias ggpur='git pull --rebase origin $(current_branch)'
 compdef ggpur=git
 alias ggpush='git push origin $(current_branch)'
 compdef ggpush=git
 alias gfpush='git push -f origin $(current_branch)'
-compdef ggpush=git
+compdef gfpush=git
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 compdef ggpnp=git
 
@@ -176,6 +178,22 @@ function work_in_progress() {
     echo "WIP!!"
   fi
 }
+
+# Gets the last modification date of files in directory
+function last-diffs() {
+  git ls-tree -r --name-only HEAD | while read filename; do
+    echo "$(git log -1 --format="%ad" --date=short -- $filename) $filename"
+  done
+}
+alias gld="last-diffs"
+
+function create-dates() {
+  git ls-tree -r --name-only HEAD | while read filename; do
+  echo "$(git log --follow --format=%ad --date=short $filename | tail -1) $filename"
+  done
+}
+alias gcd="create-dates"
+
 # these alias commit and uncomit wip branches
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r0 git rm; git commit -m "--wip--"'
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
