@@ -10,17 +10,10 @@ function git_prompt_info() {
 
 # Checks if working tree is dirty
 parse_git_dirty() {
-<<<<<<< HEAD
-  local SUBMODULE_SYNTAX=''
-  local GIT_STATUS=''
-  local CLEAN_MESSAGE='nothing to commit (working directory clean)'
-  if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
-=======
   local STATUS=''
   local FLAGS
   FLAGS=('--porcelain')
   if [[ "$(command git config --get oh-my-zsh.hide-status)" != "1" ]]; then
->>>>>>> Fix parse_git_dirty() when status.branch is set.
     if [[ $POST_1_7_2_GIT -gt 0 ]]; then
       FLAGS+='--ignore-submodules=dirty'
     fi
