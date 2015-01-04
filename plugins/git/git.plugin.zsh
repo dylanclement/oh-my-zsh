@@ -81,6 +81,7 @@ compdef _git gm=git-merge
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gclean='git reset --hard && git clean -df'
+alias gclean!="git clean -nx | awk '{ print $3}' | grep -v '.sh' | xargs rm"
 alias gscrub'git reset --hard && git clean -dfx'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
